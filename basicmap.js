@@ -14,7 +14,14 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 L.marker([35.2176665, -80.831473], {
   title: "Hello from cpcc"
-}).bindPopup("Hello from cpcc")
+}).bindPopup(`
+<center>
+<h2>Hello from cpcc</h2>
+<hr>
+<a href="https://www.cpcc.edu">Click here to visit CPCC's Website</a><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wCyHWiYPiXU?si=KLdReNWLNeIBd4wt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</center>
+`)
 }).addTo(map);
 
 console.log("basicmap.jsloaded again.");
