@@ -34,12 +34,12 @@ var topo = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USG
 	attribution: 'Tiles courtesy of the <a href="https://usgs.gov/">U.S. Geological Survey</a>'
 });
 
-let baseMaps = {
+let baseMaps ={
 Street: street,
 Topographic: topo
 }
 
-let overlaysMaps = {
+let overlaysMaps ={
 CPCC:CPCC
 }
 let map= L.marker([35.2176665, -80.831473], {
