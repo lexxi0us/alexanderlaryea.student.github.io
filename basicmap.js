@@ -39,3 +39,20 @@ var topo = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USG
 	maxZoom: 20,
 	attribution: 'Tiles courtesy of the <a href="https://usgs.gov/">U.S. Geological Survey</a>'
 });
+
+let baseMaps = {
+Street: street,
+Topographic: topo
+}
+
+let overlaysMaps = {
+CPCC:CPCC
+}
+let map= L.marker([35.2176665, -80.831473], {
+	zoom: 16,
+	layers:[street,CPCC]
+});
+
+L.control,layers(baseMaps,overlayMaps,{
+collapsed:false
+}).addTo(map);
