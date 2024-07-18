@@ -7,15 +7,14 @@ let map = L.map("map", {
   zoom: 15
 });
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
 
+
+let makewrs =[];
+
+makers.push(
 L.marker([35.2176665, -80.831473], {
   title: "Hello from cpcc"
 }).bindPopup(`
-
   <center>
     <h2>Hello from cpcc</h2>
     <hr>
@@ -23,9 +22,20 @@ L.marker([35.2176665, -80.831473], {
     <iframe width="260" height="120" src="https://www.youtube.com/embed/wCyHWiYPiXU?si=KLdReNWLNeIBd4wt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <hr>
     <p>[URL: https://www.youtube.com/watch?v=wCyHWiYPiXU]</p>
-  </center>
+  </center>`
+)
+)
 
-`).addTo(map);
+let CPCC= L.layerGroup(makers);
 
 console.log("basicmap.jsloaded again.");
 
+let street = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+})
+
+var USGS_USImageryTopo = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}', {
+	maxZoom: 20,
+	attribution: 'Tiles courtesy of the <a href="https://usgs.gov/">U.S. Geological Survey</a>'
+});
